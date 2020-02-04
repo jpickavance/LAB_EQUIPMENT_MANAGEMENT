@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block customCSS %}
+{% include 'table.css' %}
+{% endblock %}
+
+{% block content %}
+    <div class="profile">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{user.image.url }}" width=175 height=200>
+        <div class="media-body">
+          <h2 class="account-heading" style="margin-bottom: 0">{{ user.full_name }}</h2>
+          <p class="text-secondary" style="margin: 0">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+    <table style="position: absolute; top: 675%">
+      <tr>
+        <th>Equipment Booked</th>
+        <th>Return Date</th>
+      </tr>
+      {% for i in object %}
+      <tr>
+          <td>
+              <a href="{{i.get_absolute_url}}">{{i.equipment}}({{i.ICON_ref}})</a>
+          </td>
+          <td>{{i.return_date}}</td>
+      </tr>
+      {% endfor %}    
+    </table> 
+      
+{% endblock content %}

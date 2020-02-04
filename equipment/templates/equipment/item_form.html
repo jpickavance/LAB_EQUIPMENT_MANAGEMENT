@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-booking">
+                <legend class="border-bottom mb-4">Equipment Booking</legend>
+                {{ form | crispy }}
+                {% if user.is_staff %}
+                <button class="ICON" type="submit">Update</button>
+                {% elif user.email == object.current_user %}
+                <button class="ICON" type="submit" disabled>Book</button>
+                <button class="ICON" type="submit">Return</button>
+                {% elif object.location == 'storeroom' %}
+                <button class="ICON" type="submit">Book</button>
+                <button class="ICON" type="submit" disabled>Return</button>
+                {% else %}
+                <button class="ICON" type="submit" disabled>Book</button>
+                <button class="ICON" type="submit" disabled>Return</button>
+                {% endif %}
+            </fieldset>
+
+        </form>
+    </div>
+{% endblock %}

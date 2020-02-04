@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    
+    {% include 'style.css' %}
+    {% block customCSS %}
+    {% endblock %}
+
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Immersive Cognition (ICON) Lab Group - University of Leeds - Projects Homepage ">
+
+    <title>ICON</title>
+
+    
+    <meta name="description" content="Homepage for the Immersive Cognition Research group (ICON) at the University of Leeds, UK. We use immersive technologies (e.g. VR, AR) to study human behaviour.">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i|Work+Sans:400" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="48x48" href="/media/site_images/ICON_small.png">
+</head>
+
+<body>
+    <div id="main">
+        <div class="greyed">
+            <div class="inner-body">
+                {% include 'navbar.html' %}
+            </div>
+        </div>
+        <div class="inner-body footer-spacer">
+            <div id="content">
+                {% block content %}
+                
+                {% endblock %}
+            </div>
+            <div id="footer">
+                Copyright Immersive Cognition 2019
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

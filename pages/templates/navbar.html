@@ -1,0 +1,35 @@
+<div id="navbar">
+        <ul class="navlist">
+            <a class="logo" href="/">
+                <img class="logo" src="/media/site_images/ICON logo.png" />
+            </a>
+
+            {% if user.is_authenticated %}
+            <a href="/equipment">
+                <li>Inventory</li>
+            </a>
+            <a href="/logout">
+                <li>Logout</li>
+            </a>
+            {% else %}
+            <a href="/login">
+                <li>Login</li>
+            </a>
+            {% endif %}
+
+        </ul>
+        <ul class="navlist navlist-right">
+                {% if user.is_authenticated %}
+                <a href="{{user.get_absolute_url}}"> 
+                    <li>{{ user.full_name }}</li> 
+                </a>
+                {% else %}
+            <a href="https://twitter.com/ICON_UoL" title="Twitter">
+                <li><i class="fab fa-twitter twitter-color"></i></li>
+            </a>
+            <a href="http://github.com/immersivecognition" title="GitHub">
+                <li><i class="fab fa-github github-color"></i></li>
+            </a>
+                {% endif %}
+        </ul>
+</div>

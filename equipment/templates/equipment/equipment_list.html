@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block customCSS %}
+{% include 'table.css' %}
+{% endblock %}
+
+{% block content %}
+<h1></h1>
+
+<div class="table">
+<table>
+        <tr>
+          <th>Equipment</th>
+          <th>Location</th>
+          <th>Contact</th>
+          <th>Available</th>
+        </tr>
+
+        {% for i in object %}
+        <tr>
+            <td>
+                <a href="{{i.get_absolute_url}}">{{i.equipment}}({{i.ICON_ref}})</a>
+            </td>
+            <td>{{i.location}}</td>
+            <td>{{i.current_user}}</td>
+            <td>{{i.get_myfield}}</td>
+        </tr>
+        {% endfor %}
+        
+</table> 
+</div>
+{% endblock %}

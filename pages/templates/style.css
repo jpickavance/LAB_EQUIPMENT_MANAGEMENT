@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    overflow-y: scroll;
+} 
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: white;
+    color: #1e4b59;
+    margin: 0;
+    min-width: 400px;
+    line-height: 130%;
+}
+
+em {
+    font-style: italic;
+}
+
+stong {
+    font-weight: 700;
+    font-style: normal;
+}
+
+#main {
+    min-height: 100%;
+    position: relative;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: darken(inherit, 15%);
+}
+
+.inner-body {
+    position: relative;
+    margin: 0 auto 0 auto;
+    padding: 0 3em 0 3em;
+    max-width: 1200px;
+}
+
+.greyed {
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #f93696;
+}
+
+#footer-spacer {
+    padding-bottom: 50px;
+}
+
+#footer {
+    height: 50px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.section {
+    padding: 1em 0;
+    margin: 3em 0;
+}
+
+.section p {
+    text-align: center;
+}
+
+
+.section::after {
+    content: " ";
+    white-space: pre;
+    display: block;
+    position: relative;
+    margin: 3em auto 0 auto;
+    height: 1px;
+    width: 40%;
+    border-bottom: 1px solid #ebebeb;
+}
+
+img.logo {
+    max-height: 56px;
+    vertical-align: middle;
+    margin: 0 0.5em 0 0em;
+}
+
+#navbar {
+    position: relative;
+    width: 100%;
+}
+
+ul.navlist {
+    width: 100%;
+    display: inline-block; 
+    margin: 0;
+    padding: 0;
+}
+
+ul.navlist-right {
+    width: auto;
+    position: absolute;
+    right: 0px;
+    padding: 0px;
+}
+
+ul.navlist a {
+    display: inline-block;
+}
+
+ul.navlist li {
+    vertical-align: middle;
+    font-family: 'SegoeUI', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    display: inline-block; 
+    padding: 15px 1em;
+    color: #1e4b59;
+}
+
+ul.navlist li.logotext {
+    padding-left: 0px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-family: 'SegoeUI', sans-serif;
+    font-weight: 400;
+    line-height: 1.3em;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+div.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0 0 0;
+}
+
+fieldset.form-group {
+    border-color: #f93696;
+    border-style: solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+}
+
+fieldset.form-group ul{
+    font-size: 0.75em
+}
+
+fieldset.form-group p{
+    font-size: 0.75em;
+    margin-block-start: 0.25em;
+    margin-block-end: 1em
+}
+
+fieldset.form-booking {
+    border-color: #f93696;
+    border-style: solid;
+    position: relative;
+}
+
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+fieldset.form-group input[type=text], input[type=email], input[type=password] {
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #f93696;
+    border-radius: 4px;
+  }
+
+fieldset.form-group input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #1e4b59;
+    border-radius: 4px;
+  }
+
+fieldset.form-booking input[type=text], input[type=email], input[type=password] {
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #f93696;
+    border-radius: 4px;
+  }
+
+fieldset.form-group input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid #1e4b59;
+    border-radius: 4px;
+  }
+
+button.ICON {
+  background-color: white;
+  color: #1e4b59;
+  border: 1px solid #f93696;
+  -webkit-transition: .15s; /* Safari */;
+  transition-duration: 0.4s;
+}
+
+button.ICON:hover{
+    background-color: #f93696; 
+    color: white;
+}
+
+button.ICON:disabled{
+    border: none;
+    background-color: lightgray; 
+    color:#1e4b59;
+}
+
+img.home-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+}
+
+div.profile{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+}
+
+@media screen and (max-width: 640px) {
+
+    a.project {
+        width: 100%;
+    }
+
+    .inner-body {
+        padding: 0 1em 0 1em;
+    }
+
+    ul.navlist {
+        padding-left: 0;
+    }
+
+    .post-sidebar, .post-main {
+        display: block;
+        width: 100%;
+    }
+
+    ul.paperlist li {
+        padding: 1em 0em;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    ul.navlist a {
+        display: block;
+    }   
+
+    ul.navlist li {
+        padding: 8px 0 8px 0;
+    }   
+
+    a.logo {
+        text-align: center;
+        width: 100%;
+    }
+}

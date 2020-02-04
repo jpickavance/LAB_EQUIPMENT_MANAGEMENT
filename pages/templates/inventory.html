@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="section">
+        <p class="about">
+            ICON Lab Inventory
+        </p>
+        <ul>
+
+            {% for item in inventory_list %}
+                    <li>{{item}}</li>
+            {% endfor %}
+        </ul>
+        <p class="about">
+            Under construction
+        </p>
+    </div>
+{% endblock %}
