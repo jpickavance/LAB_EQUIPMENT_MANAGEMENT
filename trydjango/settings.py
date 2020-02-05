@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') # set in heroku config:set
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['iconapp.herokuapp.com']
 
 
@@ -86,16 +86,10 @@ WSGI_APPLICATION = 'trydjango.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-        'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'postgres://yibrdxswsgdbrp:12d948ad3df2ded262a24e0eeb8653df8055c6d6d200eb8d69e44da1cb7438e6@ec2-34-192-30-15.compute-1.amazonaws.com:5432/d8ttd3bt90sv57',
-        'PORT': '',
+      'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-    
-    #'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
 }
 
 
