@@ -25,7 +25,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', home_view, name='home'),
+    path('/', home_view, name='home'),
     path('equipment/', include('equipment.urls')),
     path('accounts/', include('accounts.urls')), #to grab from equipment app
     path('admin/', admin.site.urls),
