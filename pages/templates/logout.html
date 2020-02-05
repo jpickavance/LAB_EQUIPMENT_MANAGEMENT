@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
 {% block content %}
-        <img class="home-logo" src="../media/site_images/ICON logo.png" alt="banner"/>
+{% load static %}
+        <img class="home-logo" src="{% static 'images/ICON_logo.png' %}" alt="banner"/>
 {% endblock %}
