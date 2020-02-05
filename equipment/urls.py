@@ -7,7 +7,7 @@ from .views import (
 
 app_name = 'equipment'
 urlpatterns = [
-    path('/', item_list_view, name='item-list'),
+    path('', item_list_view, name='item-list'),
     path('create/', ItemCreateView.as_view(), name='item-create'),
     path('view/<slug:slug>/book/', ItemUpdateView.as_view(), name='item-book') 
 ]

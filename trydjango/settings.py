@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY') # set in heroku config:set FIND IN WIN
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['iconapp.herokuapp.com']
+ALLOWED_HOSTS = ['iconapp.herokuapp.com', '127.0.0.1:8000']
 
 
 # Application definition
