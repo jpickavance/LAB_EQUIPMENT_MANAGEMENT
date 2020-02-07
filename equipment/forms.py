@@ -14,7 +14,6 @@ class ItemBookingForm(forms.ModelForm):
             'model_spec',
             'location',
             'current_user',
-            'borrow_date',
             'return_date',
             'asset_number',
             'serial_number',
@@ -27,7 +26,6 @@ class ItemBookingForm(forms.ModelForm):
     ICON_ref        = forms.CharField(disabled=True)
     brand           = forms.CharField(disabled=True)
     model_spec      = forms.CharField(disabled=True)  
-    borrow_date     = forms.DateField(widget=forms.SelectDateWidget(), initial=date.today)
     return_date     = forms.DateField(widget=forms.SelectDateWidget(), initial=date.today)
     asset_number    = forms.CharField(disabled=True, required=False)
     serial_number   = forms.CharField(disabled=True, required=False)

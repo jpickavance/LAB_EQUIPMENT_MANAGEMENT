@@ -17,7 +17,7 @@ def get_default_user():
 
 @login_required
 def item_list_view(request, *args, **kwargs):                       #TABLE OF ALL INVENTORY
-    obj = Item.objects.all                  #call to db
+    obj = Item.objects.order_by('equipment', 'ICON_ref')                  #call to db
     equipment_context = {
         "object": obj
     #    "equipment": obj.equipment,

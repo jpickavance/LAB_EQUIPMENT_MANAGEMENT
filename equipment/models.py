@@ -9,6 +9,7 @@ class Item(models.Model):
     equipment       = models.CharField(max_length=120)
     brand           = models.CharField(max_length=36)
     model_spec      = models.CharField(max_length=36)
+    category        = models.CharField(max_length=36, default='Item type')
     ICON_ref        = models.CharField(max_length=36)
     availability    = models.BooleanField(default=True)
     borrow_date     = models.DateField(null=True, blank=True)
