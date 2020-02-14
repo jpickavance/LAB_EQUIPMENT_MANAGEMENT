@@ -29,15 +29,20 @@
 </table>
 </div>
 <div>
-  <select id="cat" name="category" form ="item-search" style="display: inline">
-    <option value="" disabled selected>Select category...</option>
-    {% for j in category %}
-    <option value="{{j}}">{{j}}</option>
-    {% endfor %}
-  </select>
-  <form id= "item-search" action="{% url 'equipment:item-search' %}" method="get" style="display: inline">
-    <button class="ICON" type="submit">Search</button>
-  </form>
+    <select id="cat" name="category" form ="item-search" style="display: inline">
+        <option value="" disabled selected>Select category...</option>
+        {% for j in category %}
+        <option value="{{j}}">{{j}}</option>
+        {% endfor %}
+      </select>
+      <form id= "item-search" action="{% url 'equipment:item-search' %}" method="get" style="display: inline">
+        <button class="ICON" type="submit">Search</button>
+      </form>
+</div>
+<br>
+<div>
+    Total: {{object.count}} <br>
+    Available: {{available.count}}
 </div>
 
 {% endblock %}

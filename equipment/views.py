@@ -17,13 +17,30 @@ def get_default_user():
 
 @login_required
 def item_list_view(request, *args, **kwargs):                       #TABLE OF ALL INVENTORY
-    obj = Item.objects.order_by('equipment', 'ICON_ref')                  #call to db
+    obj = Item.objects.order_by('equipment', 'ICON_ref')
+    cat = Item.objects.order_by('category').values_list('category', flat = True).distinct()                
     equipment_context = {
-        "object": obj
-    #    "equipment": obj.equipment,
-    #    "value": obj.value,
+        "object": obj,
+        "category": cat
     }
     return render(request, "equipment/equipment_list.html", equipment_context)
+
+@login_required
+def item_search_view(request, *args, **kwargs):
+    query = request.GET.get('category')
+    search_all = Item.objects.order_by('ICON_ref').filter(
+        category__icontains=query
+    )
+    search_available = Item.objects.filter(
+        category__icontains=query, return_date__iexact=None #this seems to work better than availability
+    )
+    cat = Item.objects.order_by('category').values_list('category', flat = True).distinct()  
+    search_context = {
+        "object": search_all,
+        "available": search_available,
+        "category": cat
+        }
+    return render(request, "equipment/equipment_search.html", search_context)
 
 class ItemUpdateView(LoginRequiredMixin, UpdateView):
     model = Item
