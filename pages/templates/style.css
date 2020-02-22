@@ -4,7 +4,12 @@
 }
 
 html {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
     overflow-y: scroll;
+    overflow-x: hidden;
 } 
 
 body {
@@ -12,7 +17,7 @@ body {
     background-color: white;
     color: #1e4b59;
     margin: 0;
-    min-width: 400px;
+    min-width: 280px;
     line-height: 130%;
 }
 
@@ -26,8 +31,7 @@ stong {
 }
 
 #main {
-    min-height: 100%;
-    position: relative;
+    min-height: 100vh;
 }
 
 a:hover {
@@ -39,11 +43,11 @@ a:hover {
     position: relative;
     margin: 0 auto 0 auto;
     padding: 0 3em 0 3em;
-    max-width: 1200px;
+    max-width: 100vw;
 }
 
 .greyed {
-    width: 100%;
+    width: 100vw;
     background-color: white;
     border-bottom: 2px solid #f93696;
 }
@@ -81,41 +85,45 @@ a:hover {
 }
 
 img.logo {
-    max-height: 56px;
+    max-height: 7vh;
+    min-height: 38px;
     vertical-align: middle;
     margin: 0 0.5em 0 0em;
 }
 
 #navbar {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    height: 8vh;
+    min-height: 40px;
 }
 
 ul.navlist {
-    width: 100%;
+    width: 75vw;
     display: inline-block; 
     margin: 0;
     padding: 0;
 }
 
 ul.navlist-right {
-    width: auto;
-    position: absolute;
+    width: 25vw;
+    position: absolute; 
     right: 0px;
     padding: 0px;
 }
 
 ul.navlist a {
     display: inline-block;
+    padding: 0vw;
 }
 
 ul.navlist li {
     vertical-align: middle;
     font-family: 'SegoeUI', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: calc(18px + 0.5vh);
     display: inline-block; 
-    padding: 15px 1em;
+    padding: 2vh 0.5em;
     color: #1e4b59;
 }
 
@@ -232,9 +240,10 @@ button.ICON:disabled{
 
 img.home-logo {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 25%);
+    width: 50vw;
+    height: auto;  
+    top: 15vh;
+    left: 25vw;
 }
 
 div.profile{
@@ -246,41 +255,76 @@ div.profile{
 }
 
 @media screen and (max-width: 640px) {
-
-    a.project {
-        width: 100%;
-    }
-
-    .inner-body {
-        padding: 0 1em 0 1em;
-    }
-
+    
     ul.navlist {
-        padding-left: 0;
+        width: 50vw;
+        display: inline-block; 
+        margin: 0;
+        padding: 0;
     }
-
-    .post-sidebar, .post-main {
-        display: block;
-        width: 100%;
+    
+    ul.navlist-right {
+        width: 40vw;
+        position: absolute; 
+        right: 0vw;
+        padding: 0vmax;
     }
-
-    ul.paperlist li {
-        padding: 1em 0em;
+    
+    ul.navlist a {
+        display: inline-block;
+        padding: 0vw;
     }
+    
+    ul.navlist li {
+        vertical-align: middle;
+        font-family: 'SegoeUI', sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        display: inline-block; 
+        padding: 2vh 0.5em;
+        color: #1e4b59;
+    }
+    
+    ul.navlist li.logotext {
+        padding-left: 0px;
+    }
+    
 
 }
 
-@media screen and (max-width: 900px) {
-    ul.navlist a {
-        display: block;
-    }   
+@media screen and (max-width: 420px) {
 
-    ul.navlist li {
-        padding: 8px 0 8px 0;
-    }   
-
-    a.logo {
-        text-align: center;
-        width: 100%;
+    ul.navlist {
+        width: 50vw;
+        display: inline-block; 
+        margin: 0;
+        padding: 0;
     }
+    
+    ul.navlist-right {
+        width: 35vw;
+        position: absolute; 
+        right: 0;
+        padding: 0;
+    }
+    
+    ul.navlist a {
+        display: inline-block;
+        padding: 0vw;
+    }
+    
+    ul.navlist li {
+        vertical-align: middle;
+        font-family: 'SegoeUI', sans-serif;
+        font-weight: 400;
+        font-size: 8px;
+        display: inline-block; 
+        padding: 2vh 0;
+        color: #1e4b59;
+    }
+    
+    ul.navlist li.logotext {
+        padding-left: 0px;
+    }
+
 }

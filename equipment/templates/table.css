@@ -1,17 +1,16 @@
 div.table {
     margin: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 10%);
-    width: 50em;
-    height: 30em;
+    position: absolute;
+    width: 75vw;
+    height: 60vh;  
+    top: 15vh;
+    left: 12.5vw;
     overflow: auto;
   }
 
 table{
     width: 100%;
-    height: 100%;
     border-collapse: collapse
 }
 
@@ -41,4 +40,45 @@ a:hover{
 
 tr:hover{
     background-color: #bbc9cd
+}
+
+@media screen and (max-width: 760px) {
+    
+    th, td{
+        text-align: left;
+        font-size: 12px;
+        padding: 2px;
+        border-bottom: 1px solid #f93696;
+    }
+
+    a{
+        font-size: 12px;
+    }
+    
+}
+
+@media screen and (max-width: 420px) {
+
+    div.table {
+        margin: auto;
+        position: absolute;
+        position: absolute;
+        width: 80vw;
+        height: 80vh;  
+        top: 15vh;
+        left: 10vw;
+        overflow: auto;
+      }
+    
+    th, td{
+        text-align: left;
+        font-size: 8px;
+        padding: 2px;
+        border-bottom: 1px solid #f93696;
+    }
+
+    a{
+        font-size: 8px;
+    }
+
 }
