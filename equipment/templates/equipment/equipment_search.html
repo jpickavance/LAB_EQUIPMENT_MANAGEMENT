@@ -11,6 +11,7 @@
 <table>
         <tr>
           <th>Equipment</th>
+          <th>Name</th>
           <th>Location</th>
           <th>Contact</th>
           <th>Available</th>
@@ -18,12 +19,11 @@
 
         {% for i in object %}
         <tr>
-            <td>
-                <a href="{{i.get_absolute_url}}">{{i.equipment}}({{i.ICON_ref}})</a>
-            </td>
-            <td>{{i.location}}</td>
-            <td>{{i.current_user}}</td>
-            <td>{{i.get_myfield}}</td>
+              <td><a href="{{i.get_absolute_url}}">{{i.equipment}}</a></td>
+              <td><a href="{{i.get_absolute_url}}">{{i.ICON_ref}}</td></a>
+              <td><a href="{{i.get_absolute_url}}">{{i.location}}</td></a>
+              <td><a href="{{i.get_absolute_url}}">{{i.current_user}}</td></a>
+              <td><a href="{{i.get_absolute_url}}">{{i.get_myfield}}</td></a>
         </tr>
         {% endfor %}
 </table>

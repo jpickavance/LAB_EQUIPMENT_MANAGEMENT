@@ -12,6 +12,7 @@ div.table {
 table{
     width: 100%;
     height: 100%;
+    border-collapse: collapse
 }
 
 th, td{
@@ -23,10 +24,20 @@ th, td{
 th {
     background-color: white;
 }
+
 a{
     color: #1e4b59;
     text-decoration: none;
 }
+
+td a { 
+    display: block; 
+}
+
+a:hover{
+    text-decoration: none;
+}
+
 
 tr:hover{
     background-color: #bbc9cd
