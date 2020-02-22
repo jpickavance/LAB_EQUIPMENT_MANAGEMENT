@@ -13,12 +13,15 @@ html {
 } 
 
 body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    line-height: 130%;
+    overflow-x: hidden;
     font-family: 'Segoe UI', sans-serif;
     background-color: white;
     color: #1e4b59;
-    margin: 0;
-    min-width: 280px;
-    line-height: 130%;
 }
 
 em {
@@ -266,8 +269,9 @@ div.profile{
     ul.navlist-right {
         width: 40vw;
         position: absolute; 
+        display: inline-block;
         right: 0vw;
-        padding: 0vmax;
+        padding: 0.3em 0;
     }
     
     ul.navlist a {
@@ -281,7 +285,7 @@ div.profile{
         font-weight: 400;
         font-size: 12px;
         display: inline-block; 
-        padding: 2vh 0.5em;
+        padding: 0em 0.5em;
         color: #1e4b59;
     }
     
@@ -289,23 +293,23 @@ div.profile{
         padding-left: 0px;
     }
     
-
 }
 
 @media screen and (max-width: 420px) {
 
     ul.navlist {
-        width: 50vw;
+        width: 60vw;
         display: inline-block; 
         margin: 0;
         padding: 0;
     }
     
     ul.navlist-right {
-        width: 35vw;
+        width: 40vw;
         position: absolute; 
+        display: inline-block;
         right: 0;
-        padding: 0;
+        padding: 0.3em 0;
     }
     
     ul.navlist a {
@@ -317,14 +321,22 @@ div.profile{
         vertical-align: middle;
         font-family: 'SegoeUI', sans-serif;
         font-weight: 400;
-        font-size: 8px;
+        font-size: 10px;
         display: inline-block; 
-        padding: 2vh 0;
+        padding: 0;
         color: #1e4b59;
     }
     
     ul.navlist li.logotext {
         padding-left: 0px;
+    }
+
+}
+
+@media screen and (max-height: 630px){
+
+    div.profile{
+        display: none;
     }
 
 }
